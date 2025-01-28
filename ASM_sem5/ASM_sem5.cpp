@@ -52,7 +52,9 @@ void task1_3() {
     std::cin >> input;
 
     __asm {
-        movsx ecx, [input]  // movsx - из меньшего операнда в больший с сохранением знака
+        //movsx ecx, [input]  // movsx - из меньшего операнда в больший с сохранением знака
+        mov ecx, 0
+        mov cx, [input]
         mov [result], ecx
     }
     std::cout << "From ECX: " << result << std::endl;
